@@ -1,6 +1,14 @@
 # History
 
-## Instralltion
+[![Build Status](https://travis-ci.org/tsmsogn/History.svg?branch=master)](https://travis-ci.org/tsmsogn/History)
+
+## Installtion
+
+```
+$ git submodule add https://github.com/tsmsogn/History.git Plugin/History
+```
+
+## Usage
 
 Update schema
 
