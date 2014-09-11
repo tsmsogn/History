@@ -2,11 +2,13 @@
 
 ## Instralltion
 
+Update schema
+
 ```
 $ ./Console/cake schema update -p History
 ```
 
-bootstrap.php
+Load plugin
 
 ```
 CakePlugin::load('History', array('bootstrap' => false, 'routes' => false));
