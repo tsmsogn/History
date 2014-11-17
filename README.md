@@ -4,30 +4,44 @@
 
 ## Installtion
 
-```
-$ git submodule add https://github.com/tsmsogn/History.git Plugin/History
-```
+Put your app plugin directory as `History`.
 
-## Usage
+### Enable plugin
 
-Update schema
+Update schema:
 
-```
-$ ./Console/cake schema update -p History
+```shell
+./Console/cake schema update -p History
 ```
 
-Load plugin
+In 2.0 you need to enable the plugin your app/Config/bootstrap.php file:
 
-```
-CakePlugin::load('History', array('bootstrap' => false, 'routes' => false));
+```php
+<?php
+CakePlugin::load('History', array('bootstrap' => false, 'routes' => true));
+?>
 ```
 
-Add actsAs like bellow with model you want to log 
+Enable admin routing in app/Config/core.php file:
 
+```php
+<?php
+Configure::write('Routing.prefixes', array('admin'));
+?>
 ```
+
+Add LogBehavior like bellow with model you want to log:
+
+```php
+<?php
 class AppModel extends Model {
 
     public $actsAs = array('History.Log');
 
 }
+?>
 ```
+
+## License
+
+The MIT License (MIT)
